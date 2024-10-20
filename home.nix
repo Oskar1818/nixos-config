@@ -24,7 +24,7 @@
     (pkgs.nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
     git
     btop
-    firefox
+    firefox-devedition
     bitwarden
     vscodium
   ];
