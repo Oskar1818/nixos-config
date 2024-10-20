@@ -1,7 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, ... }:
 
 {
@@ -59,6 +55,8 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
 
+  services.xserver.excludePackages = [ pkgs.xterm ];
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "se";
@@ -105,6 +103,23 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+  ];
+
+  # Exclude Core Apps From Being Installed.
+  environment.gnome.excludePackages = with pkgs; [
+    epiphany     # web browser
+    gedit     # text editor
+    totem     # video player
+    yelp     # help viewer
+    geary     # email client
+    gnome-calendar     # calendar
+    gnome-contacts     # contacts
+    gnome-maps      # maps
+    gnome-music     # music
+    pkgs.gnome-photos     # photos
+    pkgs.gnome-tour     # tour app
+    evince     # document viewer
+    simple-scan # document scanner
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
