@@ -35,7 +35,7 @@
     firefox-devedition
     bitwarden
     vscodium
-    gnome-tweaks
+    #gnome-tweaks
     vesktop
   ];
 

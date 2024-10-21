@@ -7,10 +7,12 @@
     ];
 
   # Enable OpenGL and add the VPL GPU runtime for hardware acceleration.
-  hardware.graphics = {
+  # hardware.graphics: unstable
+  hardware.opengl = {
     enable = true;
     extraPackages = with pkgs; [
-      vpl-gpu-rt  # for newer GPUs on NixOS >24.05 or unstable
+      onevpl-intel-gpu  # for newer GPUs on NixOS <= 24.05
+      #vpl-gpu-rt  # for newer GPUs on NixOS >24.05 or unstable
     ];
   };
 
@@ -109,17 +111,17 @@
   environment.gnome.excludePackages = with pkgs; [
     epiphany     # web browser
     gedit     # text editor
-    totem     # video player
-    yelp     # help viewer
-    geary     # email client
-    gnome-calendar     # calendar
-    gnome-contacts     # contacts
-    gnome-maps      # maps
-    gnome-music     # music
+    gnome.totem     # video player
+    gnome.yelp     # help viewer
+    gnome.geary     # email client
+    gnome.gnome-calendar     # calendar
+    gnome.gnome-contacts     # contacts
+    gnome.gnome-maps      # maps
+    gnome.gnome-music     # music
     pkgs.gnome-photos     # photos
     pkgs.gnome-tour     # tour app
-    evince     # document viewer
-    simple-scan # document scanner
+    gnome.evince     # document viewer
+    gnome.simple-scan # document scanner
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
