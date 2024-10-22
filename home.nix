@@ -37,9 +37,10 @@
     vscodium
     #gnome-tweaks
     vesktop
-    thunderbird
-    protonmail-bridge-gui
+    #thunderbird
+    #protonmail-bridge-gui
     signal-desktop
+    #ciscoPacketTracer8 # have to manualy download .deb from ciscos webiste
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
