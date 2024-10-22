@@ -7,12 +7,12 @@
     ];
 
   # Enable OpenGL and add the VPL GPU runtime for hardware acceleration.
-  # hardware.graphics: unstable
-  hardware.opengl = {
+  # hardware.graphics: unstable / hardware.opengl: 24.05
+  hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [
-      onevpl-intel-gpu  # for newer GPUs on NixOS <= 24.05
-      #vpl-gpu-rt  # for newer GPUs on NixOS >24.05 or unstable
+      #onevpl-intel-gpu  # for newer GPUs on NixOS <= 24.05
+      vpl-gpu-rt  # for newer GPUs on NixOS >24.05 or unstable
     ];
   };
 
@@ -107,21 +107,38 @@
   environment.systemPackages = with pkgs; [
   ];
 
-  # Exclude Core Apps From Being Installed.
+  # # Exclude Core Apps From Being Installed.
+  # environment.gnome.excludePackages = with pkgs; [
+  #   epiphany     # web browser
+  #   gedit     # text editor
+  #   gnome.totem     # video player
+  #   gnome.yelp     # help viewer
+  #   gnome.geary     # email client
+  #   gnome.gnome-calendar     # calendar
+  #   gnome.gnome-contacts     # contacts
+  #   gnome.gnome-maps      # maps
+  #   gnome.gnome-music     # music
+  #   pkgs.gnome-photos     # photos
+  #   pkgs.gnome-tour     # tour app
+  #   gnome.evince     # document viewer
+  #   gnome.simple-scan # document scanner
+  # ];
+
+    # Exclude Core Apps From Being Installed.
   environment.gnome.excludePackages = with pkgs; [
     epiphany     # web browser
     gedit     # text editor
-    gnome.totem     # video player
-    gnome.yelp     # help viewer
-    gnome.geary     # email client
-    gnome.gnome-calendar     # calendar
-    gnome.gnome-contacts     # contacts
-    gnome.gnome-maps      # maps
-    gnome.gnome-music     # music
-    pkgs.gnome-photos     # photos
-    pkgs.gnome-tour     # tour app
-    gnome.evince     # document viewer
-    gnome.simple-scan # document scanner
+    totem     # video player
+    yelp     # help viewer
+    geary     # email client
+    gnome-calendar     # calendar
+    gnome-contacts     # contacts
+    gnome-maps      # maps
+    gnome-music     # music
+    gnome-photos     # photos
+    gnome-tour     # tour app
+    evince     # document viewer
+    simple-scan # document scanner
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
