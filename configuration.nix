@@ -6,6 +6,11 @@
       ./hardware-configuration.nix
     ];
 
+  programs.steam = {
+    enable = true;
+  };
+
+
   # Enable OpenGL and add the VPL GPU runtime for hardware acceleration.
   # hardware.graphics: unstable / hardware.opengl: 24.05
   hardware.graphics = {
