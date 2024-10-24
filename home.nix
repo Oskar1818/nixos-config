@@ -71,5 +71,4 @@
       init.defaultBranch = "main";
     };
   };
-
 }
