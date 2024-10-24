@@ -41,6 +41,7 @@
     #protonmail-bridge-gui
     signal-desktop
     #ciscoPacketTracer8 # have to manualy download .deb from ciscos webiste
+    networkmanager-openvpn #gnome openvpn plugin
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
