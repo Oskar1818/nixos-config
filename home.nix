@@ -65,7 +65,7 @@
   # git setup
   programs.git = {
     enable = true;
-    userName = "oskar";
+    userName = "Oskar";
     userEmail = "***REMOVED***";
     extraConfig = {
       init.defaultBranch = "main";
